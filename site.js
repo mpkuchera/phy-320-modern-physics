@@ -71,6 +71,10 @@ async function loadCourse() {
 }
 
 function getMaterialHref(module, moduleIndex, material, materialIndex) {
+  if (material.file) {
+    return material.file;
+  }
+
   const moduleFolder = `${String(moduleIndex).padStart(2, "0")}-${module.slug}`;
   const materialFile = `${String(materialIndex).padStart(2, "0")}-${material.slug}.html`;
   return `${moduleFolder}/${materialFile}`;

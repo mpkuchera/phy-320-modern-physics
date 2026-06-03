@@ -19,6 +19,10 @@ function materialFile(material, materialIndex) {
   return `${String(materialIndex).padStart(2, "0")}-${material.slug}.html`;
 }
 
+function materialPath(module, moduleIndex, material, materialIndex) {
+  return material.file || `${moduleFolder(module, moduleIndex)}/${materialFile(material, materialIndex)}`;
+}
+
 function relativeHref(fromFile, toFile) {
   const href = path.relative(path.dirname(fromFile), toFile).replaceAll(path.sep, "/");
   return href || path.basename(toFile);
@@ -34,7 +38,7 @@ function flattenMaterials() {
         moduleIndex,
         material,
         materialIndex,
-        file: `${folder}/${materialFile(material, materialIndex)}`
+        file: materialPath(module, moduleIndex, material, materialIndex)
       });
     }
   }
@@ -44,19 +48,33 @@ function flattenMaterials() {
 function extractContent(html, file) {
   const startMarker = '<div class="content">';
   const start = html.indexOf(startMarker);
-  if (start === -1) {
+
+  if (start !== -1) {
+    const afterStart = start + startMarker.length;
+    const tail = html.slice(afterStart);
+    const endMarker = "\n        </div>\n      </div>\n    </div>\n  </div>";
+    const end = tail.indexOf(endMarker);
+    if (end === -1) {
+      throw new Error(`Could not find content end in ${file}`);
+    }
+
+    return tail.slice(0, end).trim();
+  }
+
+  const articleMarker = '<article id="lesson-content" class="lesson-content">';
+  const articleStart = html.indexOf(articleMarker);
+  if (articleStart === -1) {
     throw new Error(`Could not find content start in ${file}`);
   }
 
-  const afterStart = start + startMarker.length;
-  const tail = html.slice(afterStart);
-  const endMarker = "\n        </div>\n      </div>\n    </div>\n  </div>";
-  const end = tail.indexOf(endMarker);
-  if (end === -1) {
+  const afterArticle = articleStart + articleMarker.length;
+  const articleTail = html.slice(afterArticle);
+  const articleEnd = articleTail.indexOf("\n        </article>");
+  if (articleEnd === -1) {
     throw new Error(`Could not find content end in ${file}`);
   }
 
-  return tail.slice(0, end).trim();
+  return articleTail.slice(0, articleEnd).trim().replace(/\s*<\/div>\s*$/, "");
 }
 
 function renderOutline(currentPage) {
@@ -67,7 +85,7 @@ function renderOutline(currentPage) {
         ? `<ul>
 ${materials
   .map((material, materialIndex) => {
-    const file = `${moduleFolder(module, moduleIndex)}/${materialFile(material, materialIndex)}`;
+    const file = materialPath(module, moduleIndex, material, materialIndex);
     const current = file === currentPage.file ? ' aria-current="page"' : "";
     return `              <li><a href="${relativeHref(currentPage.file, file)}"${current}>${escapeHtml(material.name)}</a></li>`;
   })

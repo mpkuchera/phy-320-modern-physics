@@ -1,52 +1,20 @@
 {
   "name": "PHY 320: Modern Physics",
-  "description": "This is the content for the newly designed Modern Physics course, a product of Davidson College's HHMI FIRST grant.",
+  "description": "Exploratory reading and homework problem pages re-hosted from Trinket.",
   "lessons": [
-    {
-      "name": "Introduction",
-      "slug": "introduction",
-      "materials": [
-        {
-          "name": "Welcome",
-          "slug": "welcome"
-        },
-        {
-          "name": "Course Outline",
-          "slug": "course-outline"
-        },
-        {
-          "name": "Overview",
-          "slug": "overview"
-        }
-      ]
-    },
     {
       "name": "Special Relativity",
       "slug": "special-relativity",
       "materials": [
         {
-          "name": "Postulates of Special Relativity",
-          "slug": "postulates-of-special-relativity"
-        },
-        {
-          "name": "Results of Postulates",
-          "slug": "results-of-postulates"
-        },
-        {
-          "name": "Experimental verification",
-          "slug": "experimental-verification"
-        },
-        {
-          "name": "Paradoxes",
-          "slug": "paradoxes"
-        },
-        {
           "name": "Exploratory Reading",
-          "slug": "exploratory-reading"
+          "slug": "exploratory-reading",
+          "file": "01-special-relativity/04-exploratory-reading.html"
         },
         {
           "name": "Homework Problems",
-          "slug": "homework-problems"
+          "slug": "homework-problems",
+          "file": "01-special-relativity/05-homework-problems.html"
         }
       ]
     },
@@ -55,32 +23,14 @@
       "slug": "particle-physics",
       "materials": [
         {
-          "name": "Quantum mechanics concepts",
-          "slug": "quantum-mechanics-concepts"
-        },
-        {
-          "name": "Standard Model",
-          "slug": "standard-model"
-        },
-        {
-          "name": "Conservation laws",
-          "slug": "conservation-laws"
-        },
-        {
-          "name": "Beyond the Standard Model - What don't we know?",
-          "slug": "beyond-the-standard-model-what-dont-we-know"
-        },
-        {
-          "name": "Experiments",
-          "slug": "experiments"
-        },
-        {
           "name": "Exploratory Reading",
-          "slug": "exploratory-reading"
+          "slug": "exploratory-reading",
+          "file": "02-particle-physics/05-exploratory-reading.html"
         },
         {
           "name": "Homework Problems",
-          "slug": "homework-problems"
+          "slug": "homework-problems",
+          "file": "02-particle-physics/06-homework-problems.html"
         }
       ]
     },
@@ -89,48 +39,14 @@
       "slug": "quantum-mechanics",
       "materials": [
         {
-          "name": "Waves as particles",
-          "slug": "waves-as-particles"
-        },
-        {
-          "name": "Particles as waves",
-          "slug": "particles-as-waves"
-        },
-        {
-          "name": "Infinite Square Well",
-          "slug": "infinite-square-well"
-        },
-        {
-          "name": "Uncertainty principle",
-          "slug": "uncertainty-principle"
-        },
-        {
-          "name": "The Schrodinger Equation",
-          "slug": "the-schrodinger-equation"
-        },
-        {
-          "name": "Finite Square Well",
-          "slug": "finite-square-well"
-        },
-        {
-          "name": "Infinite potential cube",
-          "slug": "infinite-potential-cube"
-        },
-        {
-          "name": "Barriers / Tunneling",
-          "slug": "barriers-tunneling"
-        },
-        {
-          "name": "Simple Harmonic Oscillator",
-          "slug": "simple-harmonic-oscillator"
-        },
-        {
           "name": "Exploratory Reading",
-          "slug": "exploratory-reading"
+          "slug": "exploratory-reading",
+          "file": "03-quantum-mechanics/09-exploratory-reading.html"
         },
         {
           "name": "Homework Problems",
-          "slug": "homework-problems"
+          "slug": "homework-problems",
+          "file": "03-quantum-mechanics/10-homework-problems.html"
         }
       ]
     },
@@ -139,44 +55,14 @@
       "slug": "nuclear-physics",
       "materials": [
         {
-          "name": "What is a proton?",
-          "slug": "what-is-a-proton"
-        },
-        {
-          "name": "Isotopes",
-          "slug": "isotopes"
-        },
-        {
-          "name": "Nuclear shell structure",
-          "slug": "nuclear-shell-structure"
-        },
-        {
-          "name": "Radioactivity",
-          "slug": "radioactivity"
-        },
-        {
-          "name": "Fusion",
-          "slug": "fusion"
-        },
-        {
-          "name": "Fission",
-          "slug": "fission"
-        },
-        {
-          "name": "What don't we know?",
-          "slug": "what-dont-we-know"
-        },
-        {
           "name": "Exploratory Reading",
-          "slug": "exploratory-reading"
+          "slug": "exploratory-reading",
+          "file": "04-nuclear-physics/07-exploratory-reading.html"
         },
         {
           "name": "Homework Problems",
-          "slug": "homework-problems"
-        },
-        {
-          "name": "Fusion and Fission",
-          "slug": "fusion-and-fission"
+          "slug": "homework-problems",
+          "file": "04-nuclear-physics/08-homework-problems.html"
         }
       ]
     },
@@ -185,127 +71,14 @@
       "slug": "atomic-physics",
       "materials": [
         {
-          "name": "Atomic shell structure",
-          "slug": "atomic-shell-structure"
-        },
-        {
-          "name": "Hydrogen Atom",
-          "slug": "hydrogen-atom"
-        },
-        {
-          "name": "Many-electron atoms",
-          "slug": "many-electron-atoms"
-        },
-        {
-          "name": "Angular momentum",
-          "slug": "angular-momentum"
-        },
-        {
           "name": "Exploratory Reading",
-          "slug": "exploratory-reading"
+          "slug": "exploratory-reading",
+          "file": "05-atomic-physics/04-exploratory-reading.html"
         },
         {
           "name": "Homework Problems",
-          "slug": "homework-problems"
-        }
-      ]
-    },
-    {
-      "name": "Statistical Physics",
-      "slug": "statistical-physics",
-      "materials": [
-        {
-          "name": "Classical distributions",
-          "slug": "classical-distributions"
-        },
-        {
-          "name": "Fermi-Dirac distributions",
-          "slug": "fermi-dirac-distributions"
-        },
-        {
-          "name": "Bose-Einstein distributions",
-          "slug": "bose-einstein-distributions"
-        }
-      ]
-    },
-    {
-      "name": "Molecules",
-      "slug": "molecules",
-      "materials": []
-    },
-    {
-      "name": "Solids",
-      "slug": "solids",
-      "materials": [
-        {
-          "name": "Superconductors",
-          "slug": "superconductors"
-        },
-        {
-          "name": "Band theory of solids",
-          "slug": "band-theory-of-solids"
-        },
-        {
-          "name": "Semiconductors",
-          "slug": "semiconductors"
-        }
-      ]
-    },
-    {
-      "name": "General Relativity",
-      "slug": "general-relativity",
-      "materials": [
-        {
-          "name": "Tenets of General Relativity",
-          "slug": "tenets-of-general-relativity"
-        },
-        {
-          "name": "Observations of General Relativity",
-          "slug": "observations-of-general-relativity"
-        },
-        {
-          "name": "Gravitational Waves",
-          "slug": "gravitational-waves"
-        },
-        {
-          "name": "Black Holes",
-          "slug": "black-holes"
-        }
-      ]
-    },
-    {
-      "name": "Cosmology",
-      "slug": "cosmology",
-      "materials": [
-        {
-          "name": "Evidence of the Big Bang",
-          "slug": "evidence-of-the-big-bang"
-        },
-        {
-          "name": "Standard Model of Cosmology",
-          "slug": "standard-model-of-cosmology"
-        },
-        {
-          "name": "Lingering questions",
-          "slug": "lingering-questions"
-        },
-        {
-          "name": "Henrietta Leavitt",
-          "slug": "henrietta-leavitt"
-        },
-        {
-          "name": "Cecilia Payne-Gaposchkin",
-          "slug": "cecilia-payne-gaposchkin"
-        }
-      ]
-    },
-    {
-      "name": "My notes",
-      "slug": "my-notes",
-      "materials": [
-        {
-          "name": "Classroom activities",
-          "slug": "classroom-activities"
+          "slug": "homework-problems",
+          "file": "05-atomic-physics/05-homework-problems.html"
         }
       ]
     }
