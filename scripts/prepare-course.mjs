@@ -12,6 +12,10 @@ function materialFile(material, materialIndex) {
   return `${String(materialIndex).padStart(2, "0")}-${material.slug}.html`;
 }
 
+function isPlaceholder(module, material) {
+  return module.placeholder || material.placeholder;
+}
+
 function isLocalHref(href) {
   return !/^(?:[a-z][a-z0-9+.-]*:|#|\/)/i.test(href);
 }
@@ -23,7 +27,10 @@ const htmlFiles = [];
 for (const [moduleIndex, module] of course.lessons.entries()) {
   const folder = moduleFolder(module, moduleIndex);
   for (const [materialIndex, material] of module.materials.entries()) {
-    const file = path.join(folder, materialFile(material, materialIndex));
+    if (isPlaceholder(module, material)) {
+      continue;
+    }
+    const file = material.file || path.join(folder, materialFile(material, materialIndex));
     const normalizedFile = file.replaceAll(path.sep, "/");
     htmlFiles.push(normalizedFile);
     materialBySlug.set(`${module.slug}/${material.slug}`, normalizedFile);

@@ -20,6 +20,9 @@ function materialFile(material, materialIndex) {
 }
 
 function materialPath(module, moduleIndex, material, materialIndex) {
+  if (module.placeholder || material.placeholder) {
+    return null;
+  }
   return material.file || `${moduleFolder(module, moduleIndex)}/${materialFile(material, materialIndex)}`;
 }
 
@@ -33,12 +36,16 @@ function flattenMaterials() {
   for (const [moduleIndex, module] of course.lessons.entries()) {
     const folder = moduleFolder(module, moduleIndex);
     for (const [materialIndex, material] of module.materials.entries()) {
+      const file = materialPath(module, moduleIndex, material, materialIndex);
+      if (!file) {
+        continue;
+      }
       pages.push({
         module,
         moduleIndex,
         material,
         materialIndex,
-        file: materialPath(module, moduleIndex, material, materialIndex)
+        file
       });
     }
   }
@@ -86,6 +93,9 @@ function renderOutline(currentPage) {
 ${materials
   .map((material, materialIndex) => {
     const file = materialPath(module, moduleIndex, material, materialIndex);
+    if (!file) {
+      return `              <li><span class="placeholder">${escapeHtml(material.name)}</span></li>`;
+    }
     const current = file === currentPage.file ? ' aria-current="page"' : "";
     return `              <li><a href="${relativeHref(currentPage.file, file)}"${current}>${escapeHtml(material.name)}</a></li>`;
   })

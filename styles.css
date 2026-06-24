@@ -105,6 +105,11 @@ main {
   padding: 20px;
 }
 
+.module-placeholder {
+  background: rgba(255, 255, 255, 0.62);
+  border-style: dashed;
+}
+
 .module h3 {
   font-size: 1.12rem;
   letter-spacing: 0;
@@ -135,6 +140,16 @@ main {
   background: #edf6f5;
   color: var(--accent-strong);
   outline: none;
+}
+
+.material-placeholder,
+.material-placeholder:hover {
+  color: var(--muted);
+  cursor: default;
+}
+
+.material-placeholder .material-number {
+  color: var(--muted);
 }
 
 .material-number {

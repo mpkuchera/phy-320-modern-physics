@@ -175,6 +175,15 @@ th {
   font-weight: 700;
 }
 
+.course-outline .placeholder {
+  border-radius: 6px;
+  color: var(--muted);
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  padding: 7px 8px;
+}
+
 .module-empty {
   color: var(--muted);
   font-size: 0.9rem;

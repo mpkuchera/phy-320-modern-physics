@@ -22,7 +22,7 @@ async function loadCourse() {
     list.replaceChildren(
       ...modules.map((module, moduleIndex) => {
         const section = document.createElement("article");
-        section.className = "module";
+        section.className = module.placeholder ? "module module-placeholder" : "module";
 
         const heading = document.createElement("h3");
         heading.textContent = module.name || `Module ${moduleIndex + 1}`;
@@ -39,9 +39,14 @@ async function loadCourse() {
         } else {
           links.append(
             ...materials.map((material, materialIndex) => {
-              const link = document.createElement("a");
-              link.className = "material-link";
-              link.href = getMaterialHref(module, moduleIndex, material, materialIndex);
+              const isPlaceholder = module.placeholder || material.placeholder || !material.file;
+              const link = document.createElement(isPlaceholder ? "span" : "a");
+              link.className = isPlaceholder ? "material-link material-placeholder" : "material-link";
+              if (isPlaceholder) {
+                link.setAttribute("aria-disabled", "true");
+              } else {
+                link.href = getMaterialHref(module, moduleIndex, material, materialIndex);
+              }
 
               const number = document.createElement("span");
               number.className = "material-number";

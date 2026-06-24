@@ -81,6 +81,54 @@
           "file": "05-atomic-physics/05-homework-problems.html"
         }
       ]
+    },
+    {
+      "name": "Statistical Physics",
+      "slug": "statistical-physics",
+      "placeholder": true,
+      "materials": [
+        {
+          "name": "Coming soon",
+          "slug": "content-placeholder",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "name": "Solids",
+      "slug": "solids",
+      "placeholder": true,
+      "materials": [
+        {
+          "name": "Coming soon",
+          "slug": "content-placeholder",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "name": "General Relativity",
+      "slug": "general-relativity",
+      "placeholder": true,
+      "materials": [
+        {
+          "name": "Coming soon",
+          "slug": "content-placeholder",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "name": "Cosmology",
+      "slug": "cosmology",
+      "placeholder": true,
+      "materials": [
+        {
+          "name": "Coming soon",
+          "slug": "content-placeholder",
+          "placeholder": true
+        }
+      ]
     }
   ]
 }
