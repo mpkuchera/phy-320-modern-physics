@@ -123,6 +123,14 @@ function renderPage(page, pages, content) {
   const nextLink = next
     ? `<a href="${relativeHref(page.file, next.file)}" rel="next">Next</a>`
     : "<span>Next</span>";
+  const homeworkPolicy = page.material.slug === "homework-problems"
+    ? `
+        <aside class="homework-policy" aria-labelledby="homework-policy-heading">
+          <h3 id="homework-policy-heading">Homework collaboration and AI</h3>
+          <p>Problems marked with an <code>*</code> are <strong>solo problems</strong>. Complete solo problems independently, without help from classmates or generative AI, so they can serve as a self-assessment. You may attend office hours for help.</p>
+          <p>All other problems may be worked through with classmates from this course and with AI tools. If you use AI, you are responsible for checking its work and must be able to explain the reasoning and results.</p>
+        </aside>`
+    : "";
 
   return `<!doctype html>
 <html lang="en">
@@ -158,7 +166,7 @@ ${renderOutline(page)}
             ${previousLink}
             ${nextLink}
           </nav>
-        </header>
+        </header>${homeworkPolicy}
         <article id="lesson-content" class="lesson-content">
 ${content}
         </article>
@@ -177,7 +185,11 @@ const contents = new Map();
 
 for (const page of pages) {
   const html = await readFile(page.file, "utf8");
-  contents.set(page.file, extractContent(html, page.file));
+  const content = extractContent(html, page.file).replace(
+    /<h4 id="problems-with-an-indicate-solo-problems[^"]*">[\s\S]*?<\/h4>\s*/,
+    ""
+  );
+  contents.set(page.file, content);
 }
 
 for (const page of pages) {
