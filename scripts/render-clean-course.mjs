@@ -126,9 +126,9 @@ function renderPage(page, pages, content) {
   const homeworkPolicy = page.material.slug === "homework-problems"
     ? `
         <aside class="homework-policy" aria-labelledby="homework-policy-heading">
-          <h3 id="homework-policy-heading">Homework collaboration and AI</h3>
-          <p>Problems marked with an <code>*</code> are <strong>solo problems</strong>. Complete solo problems independently, without help from classmates or generative AI, so they can serve as a self-assessment. You may attend office hours for help.</p>
-          <p>All other problems may be worked through with classmates from this course and with AI tools. If you use AI, you are responsible for checking its work and must be able to explain the reasoning and results.</p>
+          <h3 id="homework-policy-heading">Homework expectations</h3>
+          <p>Problems marked with an <code>*</code> are <strong>evaluation problems</strong>. Complete evaluation problems independently, using <em>only</em> our book, so they can serve as a self-assessment. You may attend office hours for help.</p>
+          <p>All other problems are <strong>practice problems</strong>. These may be worked through with classmates from this course and with any additional materials you like. No matter what you use to solve these problems (e.g., if you choose to use AI), your submission indicates that you understand and can explain your reasoning and results. The problems <strong>must</strong> be completed within the context of the work done in class or in our book.</p>
         </aside>`
     : "";
 
