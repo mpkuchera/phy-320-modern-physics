@@ -24,6 +24,14 @@ async function loadCourse() {
         const section = document.createElement("article");
         section.className = module.placeholder ? "module module-placeholder" : "module";
 
+        const moduleLabel = document.createElement("p");
+        moduleLabel.className = "module-label";
+        moduleLabel.textContent = module.optional
+          ? "Optional / if time"
+          : module.placeholder
+            ? `Module ${String(moduleIndex + 1).padStart(2, "0")} · Later this semester`
+            : `Module ${String(moduleIndex + 1).padStart(2, "0")}`;
+
         const heading = document.createElement("h3");
         heading.textContent = module.name || `Module ${moduleIndex + 1}`;
 
@@ -50,7 +58,11 @@ async function loadCourse() {
 
               const number = document.createElement("span");
               number.className = "material-number";
-              number.textContent = String(materialIndex + 1).padStart(2, "0");
+              number.textContent = isPlaceholder
+                ? module.optional ? "Maybe" : "Soon"
+                : /homework/i.test(material.name || "")
+                  ? "HW"
+                  : "Read";
 
               const label = document.createElement("span");
               label.textContent = material.name || `Material ${materialIndex + 1}`;
@@ -61,7 +73,7 @@ async function loadCourse() {
           );
         }
 
-        section.append(heading, links);
+        section.append(moduleLabel, heading, links);
         return section;
       })
     );
