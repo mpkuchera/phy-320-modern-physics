@@ -140,7 +140,7 @@ let html = await readFile(templatePath, "utf8");
 const content = markdownToHtml(markdown);
 
 html = html
-  .replace("<title>Homework Problems | PHY 320: Modern Physics</title>", "<title>Exploratory Reading | PHY 320: Modern Physics</title>")
+  .replace("<title>Homework Problems | PHY 305: Modern Physics</title>", "<title>Exploratory Reading | PHY 305: Modern Physics</title>")
   .replace(/width: 15\.254237288135593%/, "width: 13.559322033898304%")
   .replace('href="04-exploratory-reading.html" class="prev button small"', 'href="03-paradoxes.html" class="prev button small"')
   .replace('href="../02-particle-physics/00-quantum-mechanics-concepts.html" class="next button small"', 'href="05-homework-problems.html" class="next button small"')

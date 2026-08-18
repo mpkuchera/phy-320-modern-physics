@@ -123,6 +123,14 @@ function renderPage(page, pages, content) {
   const nextLink = next
     ? `<a href="${relativeHref(page.file, next.file)}" rel="next">Next</a>`
     : "<span>Next</span>";
+  const homeworkPolicy = page.material.slug === "homework-problems"
+    ? `
+        <aside class="homework-policy" aria-labelledby="homework-policy-heading">
+          <h3 id="homework-policy-heading">Homework expectations</h3>
+          <p>Problems marked with an <code>*</code> are <strong>evaluation problems</strong>. Complete evaluation problems independently, using <em>only</em> our book, so they can serve as a self-assessment. You may attend office hours for help.</p>
+          <p>All other problems are <strong>practice problems</strong>. These may be worked through with classmates from this course and with any additional materials you like. No matter what you use to solve these problems (e.g., if you choose to use AI), your submission indicates that you understand and can explain your reasoning and results. The problems <strong>must</strong> be completed within the context of the work done in class or in our book.</p>
+        </aside>`
+    : "";
 
   return `<!doctype html>
 <html lang="en">
@@ -158,7 +166,7 @@ ${renderOutline(page)}
             ${previousLink}
             ${nextLink}
           </nav>
-        </header>
+        </header>${homeworkPolicy}
         <article id="lesson-content" class="lesson-content">
 ${content}
         </article>
@@ -177,7 +185,11 @@ const contents = new Map();
 
 for (const page of pages) {
   const html = await readFile(page.file, "utf8");
-  contents.set(page.file, extractContent(html, page.file));
+  const content = extractContent(html, page.file).replace(
+    /<h4 id="problems-with-an-indicate-solo-problems[^"]*">[\s\S]*?<\/h4>\s*/,
+    ""
+  );
+  contents.set(page.file, content);
 }
 
 for (const page of pages) {

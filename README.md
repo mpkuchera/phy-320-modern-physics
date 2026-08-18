@@ -1,6 +1,6 @@
 # Course Materials
 
-Static GitHub Pages host for PHY 320: Modern Physics course material migrated
+Static GitHub Pages host for PHY 305: Modern Physics course material migrated
 from Trinket.
 
 ## Contents
