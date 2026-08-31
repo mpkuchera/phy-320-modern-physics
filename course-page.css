@@ -1,14 +1,15 @@
 :root {
   color-scheme: light;
-  --background: #f8f7f3;
+  --background: #edf3f7;
   --surface: #ffffff;
-  --ink: #211f1b;
-  --muted: #686057;
-  --line: #ded8ce;
-  --accent: #246b68;
-  --accent-soft: #e7f1f0;
-  --highlight: #b95735;
-  --code: #f1eee8;
+  --ink: #10202d;
+  --muted: #586a78;
+  --line: #cedbe4;
+  --accent: #118dcc;
+  --accent-soft: #e5f5fc;
+  --highlight: #ffb547;
+  --navy: #071521;
+  --code: #eef3f6;
 }
 
 * {
@@ -21,7 +22,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--background);
+  background: linear-gradient(180deg, #f8fbfd 0, var(--background) 600px);
   color: var(--ink);
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.6;
@@ -101,8 +102,9 @@ th {
 }
 
 .course-sidebar {
-  background: var(--surface);
-  border-right: 1px solid var(--line);
+  background: var(--navy);
+  border-right: 1px solid #1e3545;
+  color: #ffffff;
   height: 100vh;
   overflow-y: auto;
   padding: 24px 20px;
@@ -122,6 +124,7 @@ th {
 }
 
 .course-sidebar h1 {
+  color: #ffffff;
   font-size: 1.35rem;
   letter-spacing: 0;
   line-height: 1.15;
@@ -134,7 +137,7 @@ th {
 }
 
 .course-outline h2 {
-  color: var(--muted);
+  color: #79d4fb;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   margin: 0 0 8px;
@@ -154,7 +157,7 @@ th {
 
 .course-outline a {
   border-radius: 6px;
-  color: var(--muted);
+  color: #c5d0d8;
   display: block;
   font-size: 0.9rem;
   line-height: 1.25;
@@ -164,20 +167,20 @@ th {
 
 .course-outline a:hover,
 .course-outline a:focus-visible {
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: rgba(53, 184, 242, 0.14);
+  color: #ffffff;
   outline: none;
 }
 
 .course-outline a[aria-current="page"] {
-  background: var(--accent);
-  color: var(--surface);
+  background: var(--highlight);
+  color: var(--navy);
   font-weight: 700;
 }
 
 .course-outline .placeholder {
   border-radius: 6px;
-  color: var(--muted);
+  color: #7f929f;
   display: block;
   font-size: 0.9rem;
   line-height: 1.25;
@@ -196,9 +199,12 @@ th {
 }
 
 .lesson-header {
-  background: var(--surface);
-  border-bottom: 1px solid var(--line);
-  padding: 28px clamp(22px, 5vw, 72px);
+  background:
+    radial-gradient(circle at 78% 18%, rgba(53, 184, 242, 0.3), transparent 28%),
+    linear-gradient(120deg, #081520, #123247);
+  border-bottom: 0;
+  color: #ffffff;
+  padding: 40px clamp(22px, 5vw, 72px);
 }
 
 .lesson-kicker {
@@ -211,9 +217,9 @@ th {
 }
 
 .lesson-header h2 {
-  font-size: clamp(2rem, 5vw, 4rem);
-  letter-spacing: 0;
-  line-height: 1;
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  letter-spacing: -0.035em;
+  line-height: 0.95;
   margin: 0;
 }
 
@@ -226,7 +232,7 @@ th {
 
 .lesson-nav a,
 .lesson-nav span {
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 999px;
   display: inline-flex;
   font-weight: 700;
@@ -235,8 +241,70 @@ th {
   text-decoration: none;
 }
 
+.lesson-nav a {
+  color: #ffffff;
+}
+
+.lesson-nav a:hover,
+.lesson-nav a:focus-visible {
+  background: var(--highlight);
+  border-color: var(--highlight);
+  color: var(--navy);
+  outline: none;
+}
+
 .lesson-nav span {
   color: var(--muted);
+}
+
+.homework-policy {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: clamp(22px, 5vw, 72px) clamp(22px, 5vw, 72px) 0;
+  max-width: 920px;
+}
+
+.homework-policy h3 {
+  font-size: 1.35rem;
+  grid-column: 1 / -1;
+  line-height: 1.25;
+  margin: 0 0 8px;
+}
+
+.homework-policy p {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(20, 48, 67, 0.06);
+  margin: 0;
+  padding: 20px;
+}
+
+.homework-policy p::before {
+  color: var(--navy);
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.homework-policy p:first-of-type {
+  border-top: 5px solid var(--highlight);
+}
+
+.homework-policy p:first-of-type::before {
+  content: "★ Evaluation problems · Independent";
+}
+
+.homework-policy p:last-of-type {
+  border-top: 5px solid #35b8f2;
+}
+
+.homework-policy p:last-of-type::before {
+  content: "Practice problems · Collaborative";
 }
 
 .lesson-content {
@@ -244,6 +312,8 @@ th {
   margin: clamp(22px, 5vw, 72px);
   max-width: 920px;
   padding: clamp(22px, 4vw, 54px);
+  border-radius: 14px;
+  box-shadow: 0 14px 34px rgba(20, 48, 67, 0.07);
 }
 
 .lesson-content > :first-child {
@@ -260,6 +330,7 @@ th {
 
 .lesson-content h1 {
   font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.025em;
 }
 
 .lesson-content h2 {
@@ -281,6 +352,21 @@ th {
 
 .lesson-content li + li {
   margin-top: 6px;
+}
+
+.evaluation-badge {
+  background: #fff1d8;
+  border: 1px solid #f2c475;
+  border-radius: 999px;
+  color: #714000;
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin-left: 0.45rem;
+  padding: 0.14rem 0.5rem;
+  text-transform: uppercase;
+  vertical-align: 0.12em;
 }
 
 .lesson-content a {
@@ -305,6 +391,7 @@ th {
   }
 
   .course-sidebar {
+    border-bottom: 1px solid #1e3545;
     height: auto;
     position: static;
   }
@@ -314,6 +401,11 @@ th {
   }
 
   .lesson-content {
+    margin: 20px;
+  }
+
+  .homework-policy {
+    grid-template-columns: 1fr;
     margin: 20px;
   }
 }

@@ -1,6 +1,6 @@
 {
-  "name": "PHY 320: Modern Physics",
-  "description": "Exploratory reading and homework problem pages re-hosted from Trinket.",
+  "name": "PHY 305: Modern Physics",
+  "description": "Explore supplemental readings and find homework problems for each course module.",
   "lessons": [
     {
       "name": "Special Relativity",
@@ -83,24 +83,12 @@
       ]
     },
     {
-      "name": "Statistical Physics",
-      "slug": "statistical-physics",
+      "name": "Statistical Physics & Solids",
+      "slug": "statistical-physics-solids",
       "placeholder": true,
       "materials": [
         {
-          "name": "Coming soon",
-          "slug": "content-placeholder",
-          "placeholder": true
-        }
-      ]
-    },
-    {
-      "name": "Solids",
-      "slug": "solids",
-      "placeholder": true,
-      "materials": [
-        {
-          "name": "Coming soon",
+          "name": "Materials coming soon",
           "slug": "content-placeholder",
           "placeholder": true
         }
@@ -109,10 +97,11 @@
     {
       "name": "General Relativity",
       "slug": "general-relativity",
+      "optional": true,
       "placeholder": true,
       "materials": [
         {
-          "name": "Coming soon",
+          "name": "Optional / if time",
           "slug": "content-placeholder",
           "placeholder": true
         }
@@ -121,10 +110,11 @@
     {
       "name": "Cosmology",
       "slug": "cosmology",
+      "optional": true,
       "placeholder": true,
       "materials": [
         {
-          "name": "Coming soon",
+          "name": "Optional / if time",
           "slug": "content-placeholder",
           "placeholder": true
         }
