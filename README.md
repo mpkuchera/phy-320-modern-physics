@@ -1,5 +1,7 @@
 # Course Materials
 
+[View the PHY 305: Modern Physics site](https://mpkuchera.github.io/phy-320-modern-physics/)
+
 Static GitHub Pages host for PHY 305: Modern Physics course material migrated
 from Trinket.
 
@@ -18,28 +20,12 @@ node scripts/render-clean-course.mjs
 node scripts/localize-trinket-assets.mjs
 ```
 
-## Preview locally
-
-Any static file server will work:
-
-```sh
-python3 -m http.server 8000
-```
-
-Then open <http://localhost:8000>.
-
 ## Publish with GitHub Pages
 
 1. Push this repository to GitHub.
 2. In GitHub, open **Settings > Pages**.
 3. Set **Source** to **Deploy from a branch**.
 4. Select the `main` branch and `/ (root)` folder.
-
-GitHub will publish the site at:
-
-```text
-https://YOUR-USER.github.io/YOUR-REPO/
-```
 
 The final render removes the Trinket page shell and styling. Lesson pages use
 local `course-page.css` navigation and content styling. External links and
